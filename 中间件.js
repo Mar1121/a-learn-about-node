@@ -18,6 +18,10 @@ const mw = function (req, res, next) {
     next();
 }
 app.use(mw)
+// 错误级别中间件
+app.use((err, req, res, next) => {
+    console.log('出现错误，错误级别中间件触发');
+})
 app.get('/', (req, res) => {
     res.send('Home page')
 })
@@ -49,3 +53,18 @@ app.listen(80, function () {
 // 2.路由级别中间件 绑定到express.Router()实例上的中间件
 // 应用级别中间件时绑定到app实例上，路由级别中间件绑定到router实例上
 // 3.错误级别中间件：专门用来捕获整个项目中发生的异常错误，防止项目异常崩溃
+// 四个形参 (err,req,res,next)
+// 4.Express内置的中间件：内置了三个常用的中间件
+// 1) express.static 快速托管静态资源的内置中间件 例如：HTML文件、图片、css样式（无兼容性）
+// 配置解析 application/json格式数据的内置中间件
+// 2) express.json 解析JSON格式的请求体数据（有兼容性，仅在4.16.0+版本中可用）
+// app.use(express.json())
+// 配置解析 application/x-www-form-url lencoded 格式数据的内置中间件
+// 3) express.urlencoded解析URL-encoded格式的请求体数据（有兼容性，仅在4.16.0+版本中可用）
+// app.use(express.urlencoded({ extended: false }))
+// 5.第三方中间件：非express官方内置的，而是由第三方开发出来的中间件，叫做第三方中间件
+// 例如在express@4.16.0之前的版本中，经常使用body-parser这个第三方中间件，来解析请求体数据
+// 如果没有配置任何解析表单数据的中间件，则req.body默认等于undefined
+// 还是使用app.use()注册中间件
+
+// 
