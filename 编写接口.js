@@ -2,10 +2,11 @@
 const express = require('express')
 // 创建服务器实例
 const app = express()
-
+// 引入cors中间件
+const cors = require('cors')
 // 配置解析表单数据的中间件
 app.use(express.urlencoded({ extended: false }))
-
+app.use(cors())
 // 创建API路由模块
 // 导入路由模块
 const router = require('./路由模块-编写接口')

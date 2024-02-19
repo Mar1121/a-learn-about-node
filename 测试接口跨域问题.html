@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.net/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <button id="getBtn">GET</button>
+    <button id="postBtn">POST</button>
+    <script>
+        // 接口跨域问题解决
+        // CORS
+        // 什么是cors 跨域资源共享 接口服务器配置了cors相关的HTTP响应头 就可以解除浏览器端的跨域访问限制
+        // 注意事项
+        // 1.服务器端配置
+        // 2.在浏览器中有兼容性，只有支持XMLHttpRequest Level2的浏览器才能正常访问 
+        // 使用cors中间件解决跨域问题
+        // JSONP（只支持GET请求）
+        $(() => {
+            // 测试get接口
+            $('#getBtn').on('click', () => {
+                $.ajax({
+                    type: 'GET',
+                    url: "http://127.0.0.1/api/get",
+                    data: { name: 'zs', age: 18 },
+                    success: (res) => {
+                        console.log(res)
+                    }
+                })
+            })
+            // 测试post接口
+            $('#postBtn').on('click', () => {
+                $.ajax({
+                    type: 'Post',
+                    url: "http://127.0.0.1/api/post",
+                    data: { bookname: '水浒传', author: '施耐庵' },
+                    success: (res) => {
+                        console.log(res)
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>
