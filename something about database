@@ -1,0 +1,28 @@
+1.SELECT 
+从表中查询数据 执行的结果被存储在一个结果表中 
+SELECT * FROM 表名称
+从FROM 指定的【表中】，查询出指定 列名称（字段）的数据
+SELECT 列名称 FROM 表名称
+2.INSERT INTO
+向表中插入数据
+INSERT INTO 表名称 VALUES (值1, 值2,....)
+INSERT INTO 表名称 (列名称1, 列名称2,....) VALUES (值1, 值2,....)
+3.UPDATE
+修改表中的数据
+1） 用UPDATE 指定要更新哪个表中的数据
+2） 用SET 指定列对应的新值
+3） 用WHERE 指定更新的条件
+updata 表名 set 列名称 where 条件
+4.delete
+delete FROM 表名 where 条件 
+
+and 和 or 运算符
+
+4.order by
+按照id对结果进行降序排序 desc表示降序排序 asc表示升序排序（默认情况下，就是升序排序的）
+
+多重排序
+
+5.count（*） 返回查询结果的总数据条数
+
+6.使用AS为列设置别名
