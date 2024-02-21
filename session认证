@@ -1,0 +1,10 @@
+1.session认证的局限性 session认证需要配合Cookie才能实现，由于Cookie默认不支持跨域访问，所以当涉及到前端跨域请求后端接口的时候
+需要很多额外的配置，才能实现跨域Session认证
+
+注意:当前端请求后端接口不存在跨域问题的时候，推荐使用Session身份认证机制
+     当前端需要跨域请求后端接口的时候，推荐使用JWT身份认证机制
+
+在express中使用JWT
+安装两个JWT相关的包:jsonwebtoken和express-jwt
+jsonwebtoken用于生成JWT字符串
+express-jwt用于将JWT字符串解析还原成JSON对象
