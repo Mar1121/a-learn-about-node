@@ -9,4 +9,6 @@ const userinfo_handler = require('../router_handler/userinfo')
 // 获取用户基本信息的路由
 router.get('/userinfo', userinfo_handler.getUserInfo)
 
+router.post('/userinfo', userinfo_handler.updateUserInfo)
+
 module.exports = router
