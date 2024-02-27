@@ -22,4 +22,4 @@ router.post('/updatepwd', expressJoi(update_password_schema), userinfo_handler.u
 
 // 更换头像的路由
 router.post('/update/avatar', expressJoi(update_avatar_schema), userinfo_handler.updateAvatar)
-module.exports = router
+module.exports = router 
